@@ -1,18 +1,17 @@
 function solution(s) {
-    let answer = '';
-    let words = s.split(' ');
+    let arr = s.split(' ');
+    let word ='';
     
-    for (let i = 0; i < words.length; i++) {
-        for(let j = 0; j < words[i].length; j++) {
-            if(j % 2 === 0) {
-                answer += words[i][j].toUpperCase();
-            } else {
-                answer += words[i][j].toLowerCase();
+    let answer = arr.map(a => {
+        word = a.split('');
+        return word.map((w, j) => {
+            if(j%2){
+                return w.toLowerCase();
+            }else{
+                return w.toUpperCase();
             }
-        }
-        if (i < words.length -1) {
-            answer += ' ';
-        }
-    }
-    return answer;
+        }).join('');
+    }).join(' ');
+  
+  return answer;
 }
