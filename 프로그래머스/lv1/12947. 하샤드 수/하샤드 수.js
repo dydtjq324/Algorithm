@@ -1,4 +1,5 @@
 function solution(x) {
+    let answer=false
     let sum=0;
     let tmp=x;
     while(tmp){
@@ -6,5 +7,5 @@ function solution(x) {
         tmp=Math.floor(tmp/10)
     }
     if(x%sum===0)return true
-    else return false
+    return answer
 }
